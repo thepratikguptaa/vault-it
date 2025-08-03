@@ -1,3 +1,7 @@
+<h1 align="center" id="title">Vault It</h1>
+
+<p align="center"><img src="https://socialify.git.ci/thepratikguptaa/vault-it/image?custom_language=PostgreSQL&amp;description=1&amp;font=Jost&amp;language=1&amp;logo=https%3A%2F%2Fcdn.brandfetch.io%2FidGrtLvNcI%2Ftheme%2Fdark%2Flogo.svg%3Fc%3D1dxbfHSJFAPEGdCLU4o5B&amp;name=1&amp;owner=1&amp;pattern=Circuit+Board&amp;theme=Light" alt="project-image"></p>
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
