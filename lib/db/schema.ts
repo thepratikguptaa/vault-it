@@ -41,3 +41,6 @@ export const filesRelations = relations(files, ({one, many}) => ({
     //relationship to child file/folder
     children: many(files),
 }))
+
+//types definition
+export const File = typeof files.$inferSelect
