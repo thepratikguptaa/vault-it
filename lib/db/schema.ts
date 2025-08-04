@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import {pgTable, text, uuid, integer, boolean, timestamp} from 'drizzle-orm/pg-core'
 import {relations} from 'drizzle-orm'
 
@@ -28,3 +27,17 @@ export const files = pgTable("files", {
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
 })
+
+/*
+parent: Each file/folder can have one parent folder
+children: Each folder can have many child files/folder
+*/
+
+export const filesRelations = relations(files, ({one, many}) => ({
+    parent: one(files, {
+        fields: [files.parentId],
+        references: [files.id],
+    }),
+    //relationship to child file/folder
+    children: many(files),
+}))
