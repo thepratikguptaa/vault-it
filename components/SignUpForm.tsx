@@ -9,7 +9,7 @@ import { z } from "zod";
 import { signUpSchema } from "@/schemas/signUpSchema";
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function SignUpForm() {
     const router = useRouter();
