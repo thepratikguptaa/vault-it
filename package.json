@@ -14,7 +14,10 @@
   },
   "dependencies": {
     "@clerk/nextjs": "^6.28.1",
+    "@heroui/button": "^2.2.24",
     "@heroui/card": "^2.2.23",
+    "@heroui/divider": "^2.2.17",
+    "@heroui/input": "^2.4.25",
     "@heroui/system": "^2.4.20",
     "@heroui/theme": "^2.4.20",
     "@hookform/resolvers": "^5.2.1",
@@ -22,6 +25,7 @@
     "dotenv": "^17.2.1",
     "drizzle-orm": "^0.44.4",
     "framer-motion": "^12.23.12",
+    "lucide-react": "^0.536.0",
     "next": "15.4.5",
     "react": "19.1.0",
     "react-dom": "19.1.0",
