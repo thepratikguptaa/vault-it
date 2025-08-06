@@ -9,10 +9,13 @@ import { z } from "zod";
 import { signUpSchema } from "@/schemas/signUpSchema";
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/router";
 
 export default function SignUpForm() {
+    const router = useRouter();
     const [verifying, setVerifying] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [verificationCode, setVerificationCode] = useState("");
     const [authError, setAuthError] = useState<string | null>(null);
     const {signUp, isLoaded, setActive} = useSignUp();
 
@@ -52,7 +55,23 @@ export default function SignUpForm() {
         }
     };
 
-    const handleVerificationSubmit = async () => {}
+    const handleVerificationSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if(!isLoaded || !signUp) return;
+        setIsSubmitting(true);
+        setAuthError(null);
+
+        try {
+            const result = await signUp.attemptEmailAddressVerification({
+                code: verificationCode
+            })
+            if(result.status === "complete") {
+                await setActive({session: result.createdSessionId})
+            }
+        } catch (error) {
+            
+        }
+    };
 
     if(verifying) {
         return(
