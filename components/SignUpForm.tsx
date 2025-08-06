@@ -267,7 +267,8 @@ export default function SignUpForm() {
                                     isIconOnly
                                     variant="light"
                                     size="sm"
-                                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                                    onPress={() => setShowConfirmPassword(!showConfirmPassword)}
+                                    onMouseDown={() => setShowConfirmPassword(!showConfirmPassword)}
                                     type="button"
                                 >
                                     {showConfirmPassword ? (
