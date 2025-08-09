@@ -69,10 +69,7 @@ export async function POST(request: NextRequest) {
 
         
     } catch (error) {
-        
+        console.error("Error creating folder:", error);
+        return NextResponse.json({error: "Internal Server Error"}, {status: 500});
     }
 }
-function limit(arg0: number) {
-    throw new Error("Function not implemented.");
-}
-
